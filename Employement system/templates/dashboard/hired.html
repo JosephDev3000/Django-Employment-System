@@ -1,0 +1,34 @@
+{% extends 'partials/base.html' %}
+{% block title %} Hiring Page {% endblock %}
+
+{% block content %}
+{% include 'partials/topnav.html' %}
+<div class="row my-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Odered by</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hires in hires %}
+                <tr>
+                    <td>{{ hires.roles }}</td>
+                    <td>{{ hires.roles.category }}</td>
+                    <td>{{ hires.hired_quantity }}</td>
+                    <td>{{ hires.staff.username }}</td>
+                    <td>{{ hires.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
